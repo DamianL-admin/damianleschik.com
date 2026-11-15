@@ -4,9 +4,10 @@
 name: Website veröffentlichen
 
 env:
-  # Adresse der Website. Leer = url aus site.yaml (die eigene Domain).
-  # Übergang, solange die Domain noch nicht verbunden ist: die github.io-Adresse.
-  SITE_URL: "https://damianl-admin.github.io/damianleschik.com"
+  # Adresse der Website. Leer = url aus site.yaml (die eigene Domain damianleschik.com).
+  # Nur für einen Übergang ohne eigene Domain eine andere Adresse eintragen,
+  # z. B. "https://damianl-admin.github.io/damianleschik.com".
+  SITE_URL: ""
 
 on:
   push:
