@@ -1,0 +1,188 @@
+# Feste Texte der Oberfläche (Navigation, Überschriften, Buttons).
+# Inhalte wie Profil oder Publikationen stehen im Ordner content/.
+de:
+  locale: de_DE
+  skip: Zum Inhalt springen
+  nav_label: Hauptnavigation
+  nav_research: Forschung
+  nav_publications: Publikationen
+  nav_notes: Notizen
+  nav_comics: Comics
+  other_lang: English
+  other_lang_short: EN
+  other_lang_label: English version
+  other_lang_code: en
+  note_published: Veröffentlicht
+  note_by: Von
+  read_note: Notiz lesen
+  anchor_profile: profil
+  anchor_research: forschung
+  anchor_contact: kontakt
+  portrait_alt: Porträt von Damian Leschik
+  profile_heading: Kurzprofil
+  facts_heading: Auf einen Blick
+  research_heading: Forschungsschwerpunkte
+  notes_heading: Forschungsnotizen
+  notes_home_heading: Neue Forschungsnotizen
+  notes_intro: Aktuelle Studien zu Konsumentenverhalten, KI und Marktforschung, kurz vorgestellt und eingeordnet.
+  notes_all: Alle Forschungsnotizen
+  notes_empty: Die ersten Forschungsnotizen erscheinen in Kürze.
+  notes_page_title: Forschungsnotizen – Damian Leschik
+  notes_page_description: Damian Leschik stellt aktuelle Studien zu Konsumentenverhalten, KI, Silicon Sampling und Marktforschung vor und ordnet sie ein.
+  comics_heading: Forschung als Comic
+  comics_intro: Zwei Studien als Comic erzählt, zum Lesen, Weitergeben und für die Lehre. Kostenlos als PDF.
+  comics_download: PDF herunterladen
+  comics_pending: PDF folgt in Kürze
+  comics_based_on: Beruht auf
+  comics_page_title: Forschung als Comic – Damian Leschik
+  comics_page_description: Forschung von Damian Leschik zu KI, Marktforschung und Konsumentenverhalten als Comic, kostenlos als PDF zum Herunterladen.
+  pubs_heading: Publikationen
+  pubs_home_heading: Neueste Publikationen
+  pubs_all: Alle Publikationen
+  pubs_page_title: Publikationen – Prof. Dr. Damian Leschik
+  pubs_page_description: Alle Publikationen von Damian Leschik zu KI in der Marktforschung, Konsumentenverhalten, Data Science und M&A in der Biopharma-Industrie, mit DOI.
+  pubs_intro: "{n} Einträge: Fachartikel, Buchkapitel, Tagungsbeiträge, Forschungsberichte, Dissertation und Vorträge."
+  pubs_export: Für Literaturverwaltung
+  pubs_bibtex: BibTeX
+  pubs_json: JSON
+  contact_heading: Kontakt
+  contact_email: E-Mail
+  contact_profiles: Profile
+  contact_affiliation: Hochschule
+  published: Veröffentlicht am
+  minutes: Min. Lesezeit
+  note_lang_de: auf Deutsch
+  note_lang_en: auf Englisch
+  draft_badge: Entwurf, noch nicht veröffentlicht
+  studies_heading: Besprochene Studien
+  cite_heading: Diese Notiz zitieren
+  topics: Themen
+  author_box: Über den Autor
+  back_to_notes: Zur Übersicht der Forschungsnotizen
+  summary: Zusammenfassung
+  doi: DOI
+  link: Link
+  open_access: frei zugänglich
+  in: In
+  eds: Hrsg.
+  pp: S.
+  et_al: u. a.
+  type_labels:
+    article: Fachartikel
+    chapter: Buchkapitel
+    proceedings: Tagungsbeitrag
+    report: Forschungsbericht
+    thesis: Dissertation
+    talk: Vortrag
+  type_labels_plural:
+    article: Fachartikel
+    chapter: Buchkapitel
+    proceedings: Tagungsbeiträge
+    report: Forschungsberichte
+    thesis: Dissertation
+    talk: Vorträge
+  footer_imprint: Impressum
+  footer_privacy: Datenschutz
+  footer_feed: RSS-Feed
+  footer_ai: Für KI-Systeme (llms.txt)
+  footer_note: Persönliche Website. Keine Cookies, kein Tracking.
+  footer_nav_label: Weitere Seiten
+  footer_site: Website
+  footer_elsewhere: Im Netz
+  breadcrumb_home: Start
+  not_found_title: Seite nicht gefunden
+  not_found_text: Diese Seite gibt es nicht oder nicht mehr. Vielleicht hilft ein Blick in die Publikationen oder Forschungsnotizen.
+  not_found_link: Zur Startseite
+en:
+  locale: en_GB
+  skip: Skip to content
+  nav_label: Main navigation
+  nav_research: Research
+  nav_publications: Publications
+  nav_notes: Notes
+  nav_comics: Comics
+  other_lang: Deutsch
+  other_lang_short: DE
+  other_lang_label: Deutsche Version
+  other_lang_code: de
+  note_published: Published
+  note_by: By
+  read_note: Read note
+  anchor_profile: profile
+  anchor_research: research
+  anchor_contact: contact
+  portrait_alt: Portrait of Damian Leschik
+  profile_heading: Profile
+  facts_heading: At a glance
+  research_heading: Research interests
+  notes_heading: Research notes
+  notes_home_heading: Latest research notes
+  notes_intro: Recent studies on consumer behaviour, AI and market research, briefly presented and discussed.
+  notes_all: All research notes
+  notes_empty: The first research notes will appear soon.
+  notes_page_title: Research notes – Damian Leschik
+  notes_page_description: Damian Leschik presents and discusses recent studies on consumer behaviour, AI, silicon sampling and market research.
+  comics_heading: Research as comics
+  comics_intro: Two studies told as comics, to read, share and use in teaching. Free PDF downloads.
+  comics_download: Download PDF
+  comics_pending: PDF coming soon
+  comics_based_on: Based on
+  comics_page_title: Research as comics – Damian Leschik
+  comics_page_description: Research by Damian Leschik on AI, market research and consumer behaviour, told as comics and free to download as PDF.
+  pubs_heading: Publications
+  pubs_home_heading: Latest publications
+  pubs_all: All publications
+  pubs_page_title: Publications – Prof. Dr. Damian Leschik
+  pubs_page_description: All publications by Damian Leschik on AI in market research, consumer behaviour, data science and M&A in the biopharmaceutical industry, with DOIs.
+  pubs_intro: "{n} entries: journal articles, book chapters, conference papers, research reports, doctoral thesis and talks."
+  pubs_export: For reference managers
+  pubs_bibtex: BibTeX
+  pubs_json: JSON
+  contact_heading: Contact
+  contact_email: Email
+  contact_profiles: Profiles
+  contact_affiliation: University
+  published: Published on
+  minutes: min read
+  note_lang_de: in German
+  note_lang_en: in English
+  draft_badge: Draft, not yet published
+  studies_heading: Studies discussed
+  cite_heading: Cite this note
+  topics: Topics
+  author_box: About the author
+  back_to_notes: Back to all research notes
+  summary: Summary
+  doi: DOI
+  link: Link
+  open_access: open access
+  in: In
+  eds: Eds.
+  pp: pp.
+  et_al: et al.
+  type_labels:
+    article: Journal article
+    chapter: Book chapter
+    proceedings: Conference paper
+    report: Research report
+    thesis: Doctoral thesis
+    talk: Talk
+  type_labels_plural:
+    article: Journal articles
+    chapter: Book chapters
+    proceedings: Conference papers
+    report: Research reports
+    thesis: Doctoral thesis
+    talk: Talks
+  footer_imprint: Legal notice
+  footer_privacy: Privacy
+  footer_feed: RSS feed
+  footer_ai: For AI systems (llms.txt)
+  footer_note: Personal website. No cookies, no tracking.
+  footer_nav_label: More pages
+  footer_site: Website
+  footer_elsewhere: Elsewhere
+  breadcrumb_home: Home
+  not_found_title: Page not found
+  not_found_text: This page does not exist or has moved. The publications or research notes may help.
+  not_found_link: Go to the home page

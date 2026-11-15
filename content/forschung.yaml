@@ -1,0 +1,38 @@
+# Forschungsschwerpunkte auf der Startseite.
+# Reihenfolge = Reihenfolge auf der Seite. Einträge können frei ergänzt,
+# umformuliert oder gelöscht werden. Je Eintrag: Titel + 1–2 Sätze.
+- id: silicon-sampling
+  de:
+    title: KI in der Marktforschung und Silicon Sampling
+    text: Wann können KI-generierte Befragte Umfragen und Interviews sinnvoll ergänzen, und wann verzerren sie Ergebnisse? Im Mittelpunkt stehen Prüfkriterien für Qualität, Validität und Reliabilität synthetischer Daten sowie KI-geführte Interviews.
+  en:
+    title: AI in market research and silicon sampling
+    text: When can AI-generated respondents usefully complement surveys and interviews, and when do they distort results? The focus is on criteria for the quality, validity and reliability of synthetic data, and on AI-led interviews.
+- id: consumer-insights
+  de:
+    title: Data Science für Consumer Insights
+    text: Sentimentanalyse, Topic Modelling und Strukturgleichungsmodelle (PLS-SEM) machen aus Kundendaten belastbare Erkenntnisse, etwa aus Online-Kommentaren oder Befragungen.
+  en:
+    title: Data science for consumer insights
+    text: Sentiment analysis, topic modelling and structural equation modelling (PLS-SEM) turn customer data, such as online comments or survey responses, into robust insights.
+- id: generative-ai
+  de:
+    title: Generative KI in Marketing und Vertrieb
+    text: Wie Unternehmen Sprachmodelle mit eigenem Fachwissen verbinden, zum Beispiel über Retrieval-Augmented Generation, ohne Datenschutz und Vertraulichkeit zu gefährden.
+  en:
+    title: Generative AI in marketing and sales
+    text: How companies connect language models with their own domain knowledge, for example through retrieval-augmented generation, without compromising privacy and confidentiality.
+- id: immersive
+  de:
+    title: Konsumentenverhalten in immersiven Welten
+    text: Welchen Wert Menschen in Virtual Reality, Augmented Reality und Spatial Computing sehen, untersucht mit der Means-End-Chain-Theorie.
+  en:
+    title: Consumer behaviour in immersive environments
+    text: What value people see in virtual reality, augmented reality and spatial computing, studied with means-end chain theory.
+- id: m-and-a
+  de:
+    title: Erfolg von Fusionen und Übernahmen in der Biopharma-Industrie
+    text: Welche Kennzahlen den Erfolg von M&A bei kleinen und mittleren Pharma- und Biotech-Unternehmen in Deutschland erklären. Thema der Dissertation und mehrerer Fachartikel.
+  en:
+    title: Success of mergers and acquisitions in biopharma
+    text: Which metrics explain M&A success among small and medium-sized pharmaceutical and biotech companies in Germany. Subject of the doctoral thesis and several journal articles.

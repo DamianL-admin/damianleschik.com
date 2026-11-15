@@ -1,0 +1,216 @@
+# ------------------------------------------------------------------
+# Alle Publikationen, Berichte und Vorträge.
+# Die Seite /publikationen/, die BibTeX- und JSON-Exporte sowie die
+# strukturierten Daten für Google und KI-Systeme werden hieraus erzeugt.
+#
+# Neuer Eintrag: Block kopieren, oben einfügen, Felder anpassen.
+#   type:  article | chapter | proceedings | report | thesis | talk
+#   authors: "Nachname, Vorname" (Vorname darf auch Initial sein)
+#   verified: true, sobald alle Angaben geprüft sind (DOI, Seiten, Jahr).
+#   check: Hinweis, was noch zu prüfen ist (wird nicht angezeigt).
+# ------------------------------------------------------------------
+
+- id: leschik-2026-immersive
+  type: chapter
+  year: 2026
+  authors: ["Leschik, Damian", "Baums, K.", "Mazurek, J. M. J."]
+  title: "Unlocking the future of marketing: The transformative potential of virtual reality, augmented reality, and spatial computing"
+  container: Handbuch innovatives Marketing
+  editors: ["Schuster, G.", "Bornemeyer, C."]
+  publisher: Springer Gabler
+  pages: "1–13"
+  doi: 10.1007/978-3-658-46709-8_33-1
+  language: en
+  topics: [immersive]
+  summary:
+    de: Buchbeitrag darüber, wie Virtual Reality, Augmented Reality und Spatial Computing als Werkzeuge im Marketing eingesetzt werden können.
+    en: Book chapter on virtual reality, augmented reality and spatial computing as tools for marketing.
+  verified: true
+  source: IU-Profil, Stand November 2026
+
+- id: leschik-2026-ai-interviews
+  type: chapter
+  year: 2026
+  authors: ["Leschik, Damian", "Ritz, F.", "Milicevic, A.", "Appel, D.", "Beckers, N."]
+  title: "Exploring AI-generated interviews using the means-end chain model: A comparative study with human-led interviews"
+  container: Handbuch innovatives Marketing
+  editors: ["Schuster, G.", "Bornemeyer, C."]
+  publisher: Springer Gabler
+  pages: "1–17"
+  doi: 10.1007/978-3-658-46709-8_41-1
+  language: en
+  topics: [silicon-sampling, immersive]
+  summary:
+    de: Vergleichsstudie, die KI-geführte und von Menschen geführte Interviews auf Basis der Means-End-Chain-Theorie gegenüberstellt.
+    en: A comparative study of AI-led and human-led interviews based on means-end chain theory.
+  verified: true
+  source: IU-Profil, Stand November 2026
+
+- id: leschik-2025-jobm
+  type: article
+  year: 2025
+  authors: ["Leschik, Damian"]
+  title: "Model evaluation of post-M&A success metrics in the German biopharmaceutical industry"
+  journal: Journal of Business Models
+  volume: 13
+  issue: 1
+  pages: "146–167"
+  doi: 10.54337/jobm.v13i1.7502
+  language: en
+  open_access: true
+  topics: [m-and-a]
+  summary:
+    de: Auf Basis einer Befragung von 384 kleinen und mittleren Biopharma-Unternehmen in Deutschland prüft die Studie mit PLS-SEM, welche Erfolgskennzahlen den Umsatz nach einer Fusion oder Übernahme erklären. Einen signifikanten Einfluss haben vor allem der effiziente Einsatz von Personal und Ressourcen sowie die klinische Erfolgsrate.
+    en: Using survey data from 384 small and medium-sized biopharmaceutical companies in Germany and PLS-SEM, the study tests which success metrics explain post-M&A revenue. Efficient allocation of personnel and resources and the clinical success rate have significant effects.
+  verified: true
+  source: Journal of Business Models (journals.aau.dk)
+
+- id: leschik-2025-bmc
+  type: talk
+  year: 2025
+  date: 2025-06
+  authors: ["Leschik, Damian"]
+  title: "Enhancing value propositions in metaverse business models: A means-end chain theory approach"
+  event: Business Model Conference 2025
+  place: {de: "University of Oulu, Finnland", en: "University of Oulu, Finland"}
+  language: en
+  topics: [immersive]
+  verified: false
+  check: Titel und Datum des Vortrags bestätigen (Quelle bisher nur der alte Website-Entwurf).
+
+- id: lac-leschik-2024-rag
+  type: chapter
+  year: 2024
+  authors: ["Lac, Visieu", "Leschik, Damian"]
+  title: "Unlocking the marketing and sales potential: Bridging generative AI with domain-specific data using retrieval augmented generation architecture"
+  container: Generative Künstliche Intelligenz in Marketing und Sales
+  editors: ["Bolz, Thomas", "Schuster, Gabriele"]
+  publisher: Springer Gabler
+  pages: "207–219"
+  doi: 10.1007/978-3-658-45132-5_15
+  language: en
+  topics: [generative-ai]
+  summary:
+    de: Der Beitrag zeigt, wie eine Retrieval-Augmented-Generation-Architektur (RAG) Sprachmodelle mit unternehmenseigenen Daten aus Marketing und Vertrieb verbindet, ohne Vertraulichkeit und Datenschutz zu gefährden.
+    en: The chapter shows how a retrieval-augmented generation (RAG) architecture connects language models with domain-specific marketing and sales data without compromising confidentiality and privacy.
+  verified: true
+  check: Autorenreihenfolge – laut Springer-Metadaten Lac vor Leschik, auf dem IU-Profil umgekehrt.
+  source: Springer-Metadaten über EconPapers/RePEc
+
+- id: leschik-lac-2023-tesla
+  type: proceedings
+  year: 2023
+  authors: ["Leschik, Damian", "Lac, Visieu"]
+  title: "Application of sentiment analysis and topic modelling in marketing and management: Tesla supercharger example"
+  container: "Tagungsband zur IU-Fachtagung Content Marketing 2.0: Potenziale und Herausforderungen neuer Ansätze des Content Marketings"
+  editors: ["Altendorfer, Laura-Maria", "Arweck, Josef", "Egger, Carolin", "Fox, Caterina", "Huber, Brigitte", "Langner, Anne-Kristin", "O'Gorman, Susanne", "Wecke, Bernhard"]
+  publisher: IU Internationale Hochschule
+  pages: "27–40"
+  url: https://res.cloudinary.com/iugroup/image/upload/v1704706555/Tagungsband_Content_Marketing_2.0_ylyhre.pdf
+  language: en
+  topics: [consumer-insights]
+  summary:
+    de: Die Studie kombiniert Sentimentanalyse und Topic Modelling (LDA), um rund 4.700 deutschsprachige Online-Kommentare zur Öffnung des Tesla-Supercharger-Netzes für andere Marken auszuwerten. Ein auf deutschen Texten trainiertes BERT-Modell schnitt am besten ab; die Stimmung war überwiegend negativ, häufige Themen waren Preise, Verfügbarkeit und blockierte Ladeplätze.
+    en: The study combines sentiment analysis and topic modelling (LDA) to analyse about 4,700 German-language online comments on Tesla opening its Supercharger network to other brands. A BERT model trained on German text performed best; sentiment was mostly negative, with pricing, availability and blocked charging bays as frequent topics.
+  verified: true
+  check: Schreibweise der Herausgeberin O'Gorman/O'Gormann prüfen (im Tagungsband uneinheitlich).
+  source: Tagungsband (PDF der IU)
+
+- id: leschik-2023-marketing-club
+  type: talk
+  year: 2023
+  authors: ["Leschik, Damian"]
+  title: "Sentiment-Analyse im Marketing und Management"
+  event: {de: "Vortrag beim Marketing Club Aachen", en: "Talk at Marketing Club Aachen"}
+  place: {de: Aachen, en: "Aachen, Germany"}
+  url: https://marketingclub-aachen.de/veranstaltungen/sentiment-analyse-im-marketing-und-management/
+  language: de
+  topics: [consumer-insights]
+  verified: false
+  check: Datum und Titel bestätigen (Quelle bisher nur der alte Website-Entwurf).
+
+- id: leschik-2022-jbs
+  type: article
+  year: 2022
+  authors: ["Leschik, Damian", "Rossberger, Robert", "Oczkowski, Edward"]
+  title: "M&As in Germany: Measuring success for the pharma and biotech industries"
+  journal: Journal of Business Strategy
+  volume: 43
+  issue: 2
+  pages: "87–95"
+  doi: 10.1108/JBS-07-2020-0153
+  note: {de: "Online vorab erschienen am 9. Dezember 2020.", en: "Published online on 9 December 2020."}
+  language: en
+  topics: [m-and-a]
+  summary:
+    de: Auf Basis von Tiefeninterviews mit Führungskräften, die an Fusionen und Übernahmen beteiligt waren, identifiziert die Studie Erfolgskennzahlen für kleine und mittlere Pharma- und Biotech-Unternehmen in Deutschland, etwa integrierte Unternehmenskulturen, Mitarbeiterbindung, neues Technologiewissen, mehr patentgeschützte Produkte und höhere klinische Erfolgsraten. Die Befragten kombinieren mehrere Kennzahlen mit finanziellen Instrumenten.
+    en: Based on in-depth interviews with executives involved in mergers and acquisitions, the study identifies success metrics for small and medium-sized pharmaceutical and biotech companies in Germany, such as integrated cultures, employee retention, new technology knowledge, more patent-protected products and higher clinical success rates. Interviewees combine several metrics with monetary tools.
+  verified: true
+  source: Emerald Insight
+
+- id: tigre-moura-2022-fan-monitor
+  type: report
+  year: 2022
+  authors: ["Tigre Moura, Francisco", "Leschik, Damian"]
+  title: "Live FM: Fan Monitor 2022 – German music fans, technology innovation and sustainable consumption"
+  institution: IU Internationale Hochschule
+  language: en
+  topics: [consumer-insights]
+  verified: false
+  check: Titel, Autoren und Link der Ausgabe 2022 bestätigen (Quelle bisher nur der alte Website-Entwurf).
+
+- id: tigre-moura-2021-fan-monitor
+  type: report
+  year: 2021
+  authors: ["Tigre Moura, Francisco", "Leschik, Damian", "Carnicelli Filho, Sandro", "McPherson, Gayle", "Reid, Emma"]
+  title: "Live FM: Fan Monitor 2021 – An analysis of attitudes and behavioral trends of music fans in Germany and Scotland"
+  institution: IU Internationale Hochschule & University of the West of Scotland
+  url: https://liveinnovation.org/download-the-live-fm-fan-monitor-2021-edition/
+  language: en
+  topics: [consumer-insights]
+  summary:
+    de: Jährliche Befragungsstudie zu Einstellungen und Verhalten von Musikfans in Deutschland und Schottland. Die Ausgabe 2021 legt einen Schwerpunkt auf Technologie und Innovation, etwa Gesichtserkennung bei Veranstaltungen.
+    en: Annual survey study of the attitudes and behaviour of music fans in Germany and Scotland. The 2021 edition focuses on technology and innovation, such as facial recognition at events.
+  verified: true
+  source: Bericht auf issuu.com (CCSE, University of the West of Scotland)
+
+- id: tigre-moura-2020-fan-monitor
+  type: report
+  year: 2020
+  authors: ["Tigre Moura, Francisco", "Leschik, Damian", "Carnicelli Filho, Sandro", "McPherson, Gayle", "Reid, Emma"]
+  title: "Live FM: Fan Monitor 2020 – Analysis of attitudes and behavioral trends of music fans in Germany and Scotland during the Covid-19 pandemic"
+  institution: IU Internationale Hochschule & University of the West of Scotland
+  url: https://liveinnovation.org/fan-monitor/
+  language: en
+  topics: [consumer-insights]
+  summary:
+    de: Online-Befragung von Musik- und Veranstaltungsfans in Deutschland und Schottland zu ihrem Verhalten und ihren Wahrnehmungen während der Covid-19-Pandemie.
+    en: Online survey of music and event fans in Germany and Scotland on their behaviour and perceptions during the Covid-19 pandemic.
+  verified: false
+  check: Autorenliste der Ausgabe 2020 bestätigen.
+
+- id: tigre-moura-2020-artist-monitor
+  type: report
+  year: 2020
+  authors: ["Tigre Moura, Francisco", "Leschik, Damian"]
+  title: "Live AM: Artist Monitor 2020 – Analysis of attitudes and behavioral trends of music professionals in Germany during the Covid-19 pandemic"
+  institution: IU Internationale Hochschule
+  url: https://liveinnovation.org/artist-monitor/
+  language: en
+  topics: [consumer-insights]
+  verified: false
+  check: Autorenliste bestätigen.
+
+- id: leschik-dba-thesis
+  type: thesis
+  year: 2017
+  authors: ["Leschik, Damian"]
+  title: "Assessment of post-merger and acquisition success factors for small- and medium-size German pharmaceutical and biotechnology companies"
+  degree: Doctor of Business Administration
+  institution: Charles Sturt University
+  place: {de: Australien, en: Australia}
+  award: Joss Group Outstanding Thesis Prize
+  language: en
+  topics: [m-and-a]
+  verified: false
+  check: Exakter Titel und Jahr der Dissertation bestätigen (Quelle bisher nur der alte Website-Entwurf).

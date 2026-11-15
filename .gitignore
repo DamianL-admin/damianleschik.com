@@ -1,0 +1,13 @@
+# Erzeugte Dateien (werden bei jedem Build neu gebaut)
+_site/
+_vorschau/
+__pycache__/
+*.pyc
+.DS_Store
+# Testdatei aus der Einrichtung
+.github/workflows/_probe.txt
+# Das Repository ist öffentlich: Entwürfe und Agenten-Berichte bleiben lokal
+content/entwuerfe/*
+!content/entwuerfe/_LIESMICH.md
+berichte/*
+!berichte/.gitkeep

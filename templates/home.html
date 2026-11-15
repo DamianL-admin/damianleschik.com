@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pub_entry, note_item, comic_item, portrait_img with context %}
+{% block main %}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    {{ portrait_img('portrait-hero') }}
+    <h1 id="hero-title"><span class="hero-name">{{ site.honorific }} {{ site.name }}</span> <span class="hero-claim">{{ claim }}</span></h1>
+    <p class="hero-role">{{ job_title }}<br>{{ affiliation_name }} · {{ campus }}</p>
+    <span class="hero-line" aria-hidden="true"></span>
+  </div>
+</section>
+
+<section class="section profile" id="{{ t.anchor_profile }}" aria-labelledby="profile-title">
+  <div class="wrap profile-grid">
+    <div class="profile-text">
+      <h2 class="label" id="profile-title">{{ t.profile_heading }}</h2>
+      <div class="prose">{{ profile_html }}</div>
+    </div>
+    <aside class="facts" aria-labelledby="facts-title">
+      <h2 class="label facts-title" id="facts-title">{{ t.facts_heading }}</h2>
+      <dl>
+        {% for f in facts %}
+        <div class="fact"><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+        {% endfor %}
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section research" id="{{ t.anchor_research }}" aria-labelledby="research-title">
+  <div class="wrap">
+    <h2 class="label" id="research-title">{{ t.research_heading }}</h2>
+    <ul class="research-list">
+      {% for r in research %}
+      <li class="research-item" id="{{ r.id }}">
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.text }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section notes" aria-labelledby="notes-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="label" id="notes-title">{{ t.notes_home_heading }}</h2>
+      <p class="section-intro">{{ t.notes_intro }}</p>
+    </div>
+    {% if notes %}
+    <ul class="note-list">
+      {% for n in notes %}{{ note_item(n) }}{% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">{{ t.notes_empty }}</p>
+    {% endif %}
+    <p class="more"><a class="button" href="{{ rel(routes.notes) }}">{{ t.notes_all }}</a></p>
+  </div>
+</section>
+
+<section class="section comics" aria-labelledby="comics-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="label" id="comics-title">{{ t.comics_heading }}</h2>
+      <p class="section-intro">{{ t.comics_intro }}</p>
+    </div>
+    <div class="comic-grid">
+      {% for c in comics %}{{ comic_item(c) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section pubs-home" aria-labelledby="pubs-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="label" id="pubs-title">{{ t.pubs_home_heading }}</h2>
+    </div>
+    <div class="pub-list">
+      {% for p in papers %}{{ pub_entry(p) }}{% endfor %}
+    </div>
+    <p class="more"><a class="button" href="{{ rel(routes.publications) }}">{{ t.pubs_all }}</a></p>
+  </div>
+</section>
+
+<section class="section contact" id="{{ t.anchor_contact }}" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 class="label" id="contact-title">{{ t.contact_heading }}</h2>
+    <div class="contact-grid">
+      <div class="contact-cell">
+        <h3>{{ t.contact_email }}</h3>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <div class="contact-cell">
+        <h3>{{ t.contact_affiliation }}</h3>
+        <p><a href="{{ site.affiliation.url }}">{{ affiliation_name }}</a><br>{{ campus }}</p>
+      </div>
+      <div class="contact-cell">
+        <h3>{{ t.contact_profiles }}</h3>
+        <ul>
+          {% for pr in profiles %}<li><a href="{{ pr.url }}" rel="me">{{ pr.label }}</a></li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

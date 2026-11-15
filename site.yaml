@@ -1,0 +1,98 @@
+# ------------------------------------------------------------------
+# Zentrale Angaben für die Website damianleschik.com
+# Änderungen hier wirken auf alle Seiten, die strukturierten Daten
+# (für Google und KI-Systeme), llms.txt, Sitemap und Impressum.
+# Danach einmal bauen:  python3 build.py
+# ------------------------------------------------------------------
+
+# Adresse der Website (ohne Schrägstrich am Ende).
+# Falls du dich für .org entscheidest, nur diese Zeile ändern.
+url: https://damianleschik.com
+
+name: Damian Leschik
+honorific: Prof. Dr.
+given_name: Damian
+family_name: Leschik
+
+job_title:
+  de: Professor für Marketing Management
+  en: Professor of Marketing Management
+
+affiliation:
+  name: IU Internationale Hochschule
+  name_dative: IU Internationalen Hochschule   # für Sätze wie „an der …“
+  name_en: IU International University of Applied Sciences
+  url: https://www.iu.de
+  campus:
+    de: Campus Aachen und Köln
+    en: Aachen and Cologne campuses
+  since: 2019
+
+# Wohn- bzw. Arbeitsort (erscheint nur als Ort, nicht als Adresse)
+location:
+  city: Aachen
+  country: DE
+
+# Öffentliche Kontaktadresse auf der Website.
+# Tipp: Nach der Domain-Registrierung z. B. kontakt@damianleschik.com einrichten.
+email: damian.leschik@iu.org
+
+alumni:
+  - name: Charles Sturt University
+    url: https://www.csu.edu.au
+
+credentials:
+  - de: Doctor of Business Administration (Charles Sturt University, Australien)
+    en: Doctor of Business Administration (Charles Sturt University, Australia)
+  - de: Diplom-Wirtschaftsingenieur (Marketing)
+    en: Diplom-Wirtschaftsingenieur (industrial engineering, marketing)
+  - de: Diplom-Ingenieur Biotechnologie
+    en: Diplom-Ingenieur (biotechnology)
+
+awards:
+  - Joss Group Outstanding Thesis Prize (Charles Sturt University)
+
+member_of:
+  - de: Arbeitsgemeinschaft für Marketing (AfM), Arbeitsgruppe „KI & Marke(ting)“ (Vorstand)
+    en: Arbeitsgemeinschaft für Marketing (AfM), working group “AI & Brand/Marketing” (board member)
+
+# Themen, für die du stehst. Sie landen in den strukturierten Daten (knowsAbout).
+topics:
+  de: [Marktforschung, Silicon Sampling, Synthetische Daten, Künstliche Intelligenz im Marketing, Generative KI, Konsumentenverhalten, Data Science, Sentimentanalyse, Topic Modelling, PLS-SEM, Means-End-Chain-Theorie, Virtual Reality und Augmented Reality, Mergers & Acquisitions in der Biopharma-Industrie]
+  en: [Market research, Silicon sampling, Synthetic data, Artificial intelligence in marketing, Generative AI, Consumer behaviour, Data science, Sentiment analysis, Topic modelling, PLS-SEM, Means-end chain theory, Virtual and augmented reality, Mergers and acquisitions in the biopharmaceutical industry]
+
+# Profile im Netz. Leere Einträge werden nicht angezeigt.
+# ORCID und Google Scholar sind für die Auffindbarkeit durch KI besonders wertvoll.
+profiles:
+  iu:
+    label: IU-Profil
+    label_en: IU profile
+    url: https://www.iu.org/about/professors-lecturers/damian-leschik/
+  orcid:
+    label: ORCID
+    url: ""
+  google_scholar:
+    label: Google Scholar
+    url: ""
+  linkedin:
+    label: LinkedIn
+    url: ""
+  researchgate:
+    label: ResearchGate
+    url: ""
+
+# Angaben für Impressum und Datenschutzerklärung.
+# WICHTIG: Vor der Veröffentlichung ausfüllen (Pflichtangaben nach § 5 DDG).
+impressum:
+  name: Prof. Dr. Damian Leschik
+  street: "[Straße und Hausnummer ergänzen]"
+  city: "[PLZ] Aachen"
+  country: Deutschland
+  email: damian.leschik@iu.org
+
+# Hosting (für die Datenschutzerklärung). Bei einem anderen Anbieter anpassen.
+hosting:
+  provider: GitHub Pages (GitHub, Inc.)
+  address: 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA
+  privacy_url: https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement
+  outside_eu: true

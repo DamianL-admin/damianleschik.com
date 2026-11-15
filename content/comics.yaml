@@ -1,0 +1,37 @@
+# ------------------------------------------------------------------
+# Forschung als Comic (Downloads)
+#
+# So kommt ein Comic auf die Seite:
+#   1. PDF nach static/downloads/ legen (Dateiname wie unter "file").
+#   2. Titel, Beschreibung und "based_on" unten ausfüllen.
+#   3. Optional: Titelbild als static/assets/img/<id>.jpg ablegen
+#      und unter "cover" eintragen (z. B. /assets/img/comic-1.jpg).
+#   4. python3 build.py
+# Solange das PDF fehlt, zeigt die Seite „PDF folgt in Kürze“.
+#
+# Tipp für Google und KI: Die Beschreibung ist der Text, den Maschinen
+# lesen können. 2–4 Sätze mit der Kernaussage der Studie helfen sehr.
+# ------------------------------------------------------------------
+
+- id: comic-1
+  file: comic-1.pdf
+  cover: ""
+  # id einer Publikation aus publikationen.yaml, auf der der Comic beruht
+  based_on: ""
+  title:
+    de: "Comic 1 – Titel folgt"
+    en: "Comic 1 – title to follow"
+  description:
+    de: "Hier steht bald eine kurze Beschreibung: Worum geht es in der Studie, und was ist die wichtigste Erkenntnis?"
+    en: "A short description will follow: what the study is about and its key finding."
+
+- id: comic-2
+  file: comic-2.pdf
+  cover: ""
+  based_on: ""
+  title:
+    de: "Comic 2 – Titel folgt"
+    en: "Comic 2 – title to follow"
+  description:
+    de: "Hier steht bald eine kurze Beschreibung: Worum geht es in der Studie, und was ist die wichtigste Erkenntnis?"
+    en: "A short description will follow: what the study is about and its key finding."

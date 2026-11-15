@@ -1,0 +1,52 @@
+# VORLAGE: Beim Einrichten des GitHub-Repositorys nach .github/workflows/deploy.yml kopieren.
+# Baut die Website bei jeder Änderung auf "main" und veröffentlicht sie über GitHub Pages.
+# Einmalig in GitHub einstellen: Settings → Pages → Source: "GitHub Actions".
+name: Website veröffentlichen
+
+env:
+  # Adresse der Website. Leer = url aus site.yaml (die eigene Domain).
+  # Übergang, solange die Domain noch nicht verbunden ist: die github.io-Adresse.
+  SITE_URL: "https://damianl-admin.github.io/damianleschik.com"
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Pakete installieren
+        run: pip install -r requirements.txt
+      - name: Website bauen
+        run: python build.py ${SITE_URL:+--base-url "$SITE_URL"}
+      - name: Website prüfen (bricht bei Fehlern ab, z. B. unvollständigem Impressum)
+        run: python tools/audit.py --streng ${SITE_URL:+--base-url "$SITE_URL"}
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pub_entry with context %}
+{% block main %}
+<div class="page-head">
+  <div class="wrap">
+    <h1>{{ t.pubs_heading }}</h1>
+    <p class="lead">{{ intro }}</p>
+    <p class="exports">{{ t.pubs_export }}: <a href="{{ rel('/publikationen.bib') }}">{{ t.pubs_bibtex }}</a>, <a href="{{ rel('/publikationen.json') }}">{{ t.pubs_json }}</a></p>
+  </div>
+</div>
+<div class="wrap pub-years">
+  {% for g in groups %}
+  <section class="year-group" aria-labelledby="y{{ g.year }}">
+    <h2 class="year" id="y{{ g.year }}">{{ g.year }}</h2>
+    <div class="pub-list">
+      {% for p in g["items"] %}{{ pub_entry(p) }}{% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% from "_macros.html" import note_item with context %}
+{% block main %}
+<div class="page-head">
+  <div class="wrap">
+    <h1>{{ t.notes_heading }}</h1>
+    <p class="lead">{{ t.notes_intro }}</p>
+  </div>
+</div>
+<div class="wrap page-body">
+  {% if notes %}
+  <ul class="note-list">
+    {% for n in notes %}{{ note_item(n, heading='h2') }}{% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">{{ t.notes_empty }}</p>
+  {% endif %}
+</div>
+{% endblock %}

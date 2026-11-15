@@ -1,0 +1,68 @@
+{# Bausteine, die auf mehreren Seiten vorkommen. #}
+
+{% macro pub_entry(p, heading='h3') %}
+<article class="pub" id="{{ p.id }}">
+  <p class="pub-type">{{ p.type_label }}{% if p.open_access %}<span class="pub-oa">{{ t.open_access }}</span>{% endif %}</p>
+  <{{ heading }} class="pub-title">{% if p.link %}<a href="{{ p.link }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</{{ heading }}>
+  <p class="pub-cite">{{ p.authors_html }} ({{ p.year }}). {{ p.venue_html }}</p>
+  {% if p.doi %}
+  <p class="pub-link">{{ t.doi }} <a href="{{ p.doi_url }}">{{ p.doi }}</a></p>
+  {% elif p.url %}
+  <p class="pub-link">{{ t.link }} <a href="{{ p.url }}">{{ p.url | replace('https://', '') | truncate(64, True, '…', 0) }}</a></p>
+  {% endif %}
+  {% if p.summary_text %}
+  <details class="pub-summary">
+    <summary>{{ t.summary }}</summary>
+    <p>{{ p.summary_text }}</p>
+  </details>
+  {% endif %}
+</article>
+{% endmacro %}
+
+{% macro note_item(n, heading='h3') %}
+<li class="note-item">
+  <article class="note-card">
+    <{{ heading }} class="note-title"><a href="{{ rel(n.url) }}"{% if n.lang != lang %} hreflang="{{ n.lang }}"{% endif %}>{{ n.title }}</a></{{ heading }}>
+    <p class="note-summary">{{ n.summary }}</p>
+    <p class="note-meta">
+      <span>{{ t.note_published }}: <b><time datetime="{{ n.date.isoformat() }}">{{ n.date_text }}</time></b></span>
+      <span>{{ t.note_by }}: <b>{{ site.name }}</b></span>
+      {% if n.lang != lang %}<span class="note-lang">{{ n.lang_label }}</span>{% endif %}
+      {% if n.draft %}<span class="badge-draft">{{ t.draft_badge }}</span>{% endif %}
+    </p>
+    <span class="note-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/></svg></span>
+  </article>
+</li>
+{% endmacro %}
+
+{% macro comic_item(c, heading='h3') %}
+<article class="comic" id="{{ c.id }}">
+  <div class="comic-cover">
+    {% if c.cover %}
+    <img src="{{ rel(c.cover) }}" alt="" loading="lazy" width="600" height="800">
+    {% else %}
+    <div class="comic-placeholder" aria-hidden="true"><span></span><span></span><span></span></div>
+    {% endif %}
+  </div>
+  <div class="comic-body">
+    <{{ heading }} class="comic-title">{{ c.title_text }}</{{ heading }}>
+    <p>{{ c.description_text }}</p>
+    {% if c.based_on_text %}
+    <p class="comic-source">{{ t.comics_based_on }}: <a href="{{ c.based_on_link }}">{{ c.based_on_text }}</a></p>
+    {% endif %}
+    {% if c.available %}
+    <a class="button" href="{{ rel(c.url) }}" download>{{ t.comics_download }}<span class="button-meta">PDF, {{ c.size_text }}</span></a>
+    {% else %}
+    <p class="pending">{{ t.comics_pending }}</p>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}
+
+{% macro portrait_img(size_class='') %}
+{% if portrait %}
+<img class="portrait {{ size_class }}" src="{{ rel(portrait) }}" alt="{{ t.portrait_alt }}" width="680" height="680">
+{% else %}
+<div class="portrait portrait-placeholder {{ size_class }}" role="img" aria-label="{{ t.portrait_alt }}"><span>DL</span></div>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "_macros.html" import comic_item with context %}
+{% block main %}
+<div class="page-head">
+  <div class="wrap">
+    <h1>{{ t.comics_heading }}</h1>
+    <p class="lead">{{ t.comics_intro }}</p>
+  </div>
+</div>
+<div class="wrap page-body">
+  <div class="comic-grid">
+    {% for c in comics %}{{ comic_item(c, heading='h2') }}{% endfor %}
+  </div>
+</div>
+{% endblock %}

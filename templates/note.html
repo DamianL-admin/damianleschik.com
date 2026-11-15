@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% from "_macros.html" import portrait_img with context %}
+{% block main %}
+<article class="note">
+  <header class="note-head">
+    <div class="wrap narrow">
+      <p class="crumb"><a href="{{ rel(routes.notes) }}">{{ t.notes_heading }}</a></p>
+      {% if note.draft %}<p><span class="badge-draft">{{ t.draft_badge }}</span></p>{% endif %}
+      <h1>{{ note.title }}</h1>
+      <p class="lead">{{ note.summary }}</p>
+      <p class="note-meta">
+        <span>{{ site.name }}</span>
+        <time datetime="{{ note.date.isoformat() }}">{{ note.date_text }}</time>
+        <span>{{ note.minutes }} {{ t.minutes }}</span>
+      </p>
+    </div>
+  </header>
+  <div class="wrap narrow note-body">
+    <div class="prose">{{ note.html }}</div>
+
+    {% if note.studies %}
+    <section class="note-box studies" aria-labelledby="studies-title">
+      <h2 id="studies-title">{{ t.studies_heading }}</h2>
+      <ul>
+        {% for s in note.studies %}
+        <li>{{ s.authors }} ({{ s.year }}). {{ s.title }}. <em>{{ s.venue }}</em>.
+          {% if s.doi %}<a href="https://doi.org/{{ s.doi }}">https://doi.org/{{ s.doi }}</a>{% elif s.url %}<a href="{{ s.url }}">{{ s.url | replace('https://', '') | truncate(70, True, '…', 0) }}</a>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if note.tags %}
+    <p class="tags">{{ t.topics }}: {{ note.tags | join(', ') }}</p>
+    {% endif %}
+
+    <section class="note-box cite" aria-labelledby="cite-title">
+      <h2 id="cite-title">{{ t.cite_heading }}</h2>
+      <p>{{ citation }}</p>
+    </section>
+
+    <aside class="author-box" aria-label="{{ t.author_box }}">
+      {{ portrait_img('portrait-small') }}
+      <p><a href="{{ rel(routes.home) }}">{{ site.honorific }} {{ site.name }}</a><br>{{ job_title }}, {{ affiliation_name }}</p>
+    </aside>
+
+    <p class="back"><a href="{{ rel(routes.notes) }}">{{ t.back_to_notes }}</a></p>
+  </div>
+</article>
+{% endblock %}
