@@ -85,8 +85,8 @@ profiles:
 # WICHTIG: Vor der Veröffentlichung ausfüllen (Pflichtangaben nach § 5 DDG).
 impressum:
   name: Prof. Dr. Damian Leschik
-  street: "[Straße und Hausnummer ergänzen]"
-  city: "[PLZ] Aachen"
+  street: "Im Vennbahnbogen 47"
+  city: "52076 Aachen"
   country: Deutschland
   email: damian.leschik@iu.org
 
