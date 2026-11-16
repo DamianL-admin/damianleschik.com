@@ -13,38 +13,53 @@
 - id: leschik-2026-immersive
   type: chapter
   year: 2026
-  authors: ["Leschik, Damian", "Baums, K.", "Mazurek, J. M. J."]
+  authors: ["Leschik, Damian", "Baums, Kilian", "Mazurek, John Michael Justin"]
   title: "Unlocking the future of marketing: The transformative potential of virtual reality, augmented reality, and spatial computing"
-  container: Handbuch innovatives Marketing
+  container: Handbuch Innovatives Marketing
   editors: ["Schuster, G.", "Bornemeyer, C."]
   publisher: Springer Gabler
-  pages: "1–13"
-  doi: 10.1007/978-3-658-46709-8_33-1
+  pages: "647–660"
+  doi: 10.1007/978-3-658-51525-6_33
+  note: {de: "Vorabfassung online erschienen am 10. März 2026 (DOI 10.1007/978-3-658-46709-8_33-1).", en: "Advance online version published on 10 March 2026 (DOI 10.1007/978-3-658-46709-8_33-1)."}
   language: en
   topics: [immersive]
   summary:
     de: Buchbeitrag darüber, wie Virtual Reality, Augmented Reality und Spatial Computing als Werkzeuge im Marketing eingesetzt werden können.
     en: Book chapter on virtual reality, augmented reality and spatial computing as tools for marketing.
   verified: true
-  source: IU-Profil, Stand November 2026
+  source: Crossref, finale Buchfassung (online 19.08.2026); Vorabfassung laut IU-Profil
 
 - id: leschik-2026-ai-interviews
   type: chapter
   year: 2026
-  authors: ["Leschik, Damian", "Ritz, F.", "Milicevic, A.", "Appel, D.", "Beckers, N."]
+  authors: ["Leschik, Damian", "Ritz, Fabian", "Milicevic, Anastasia", "Appel, Daria", "Beckers, Niklas"]
   title: "Exploring AI-generated interviews using the means-end chain model: A comparative study with human-led interviews"
-  container: Handbuch innovatives Marketing
+  container: Handbuch Innovatives Marketing
   editors: ["Schuster, G.", "Bornemeyer, C."]
   publisher: Springer Gabler
-  pages: "1–17"
-  doi: 10.1007/978-3-658-46709-8_41-1
+  pages: "187–203"
+  doi: 10.1007/978-3-658-51525-6_41
+  note: {de: "Vorabfassung online erschienen am 20. Januar 2026 (DOI 10.1007/978-3-658-46709-8_41-1).", en: "Advance online version published on 20 January 2026 (DOI 10.1007/978-3-658-46709-8_41-1)."}
   language: en
   topics: [silicon-sampling, immersive]
   summary:
     de: Vergleichsstudie, die KI-geführte und von Menschen geführte Interviews auf Basis der Means-End-Chain-Theorie gegenüberstellt.
     en: A comparative study of AI-led and human-led interviews based on means-end chain theory.
   verified: true
-  source: IU-Profil, Stand November 2026
+  source: Crossref, finale Buchfassung (online 19.08.2026); Vorabfassung laut IU-Profil
+
+- id: leschik-2026-afm-ki-lehre
+  type: talk
+  year: 2026
+  date: 2026-06-11
+  authors: ["Leschik, Damian"]
+  title: "KI in der Marken- und Marketinglehre: Erfahrungen aus Marktforschung und Internationalem Marketing"
+  event: {de: "Impulsvortrag in der 2. Sitzung der AfM-Arbeitsgruppe „KI & Marke(ting)“", en: "Talk at the 2nd meeting of the AfM working group “AI & Brand/Marketing”"}
+  url: https://arbeitsgemeinschaft.marketing/afm-arbeitsgruppen/ki-marketing/
+  language: de
+  topics: [silicon-sampling, generative-ai]
+  verified: true
+  source: Seite der AfM-Arbeitsgruppe „KI & Marke(ting)“ (2. Sitzung am 11.6.2026), abgerufen am 16.11.2026
 
 - id: leschik-2025-jobm
   type: article
@@ -76,7 +91,7 @@
   language: en
   topics: [immersive]
   verified: false
-  check: Titel und Datum des Vortrags bestätigen (Quelle bisher nur der alte Website-Entwurf).
+  check: Titel und Datum des Vortrags bestätigen (Quelle bisher nur der alte Website-Entwurf). Stand 16.11.2026 weder im Tagungsband (Acta Universitatis Ouluensis F 23) noch auf den Veranstaltungsseiten gefunden; bitte Programm oder Annahme-Mail prüfen.
 
 - id: lac-leschik-2024-rag
   type: chapter
@@ -94,8 +109,7 @@
     de: Der Beitrag zeigt, wie eine Retrieval-Augmented-Generation-Architektur (RAG) Sprachmodelle mit unternehmenseigenen Daten aus Marketing und Vertrieb verbindet, ohne Vertraulichkeit und Datenschutz zu gefährden.
     en: The chapter shows how a retrieval-augmented generation (RAG) architecture connects language models with domain-specific marketing and sales data without compromising confidentiality and privacy.
   verified: true
-  check: Autorenreihenfolge – laut Springer-Metadaten Lac vor Leschik, auf dem IU-Profil umgekehrt.
-  source: Springer-Metadaten über EconPapers/RePEc
+  source: Crossref (Reihenfolge Lac vor Leschik bestätigt, 16.11.2026); zuvor Springer-Metadaten über EconPapers/RePEc
 
 - id: leschik-lac-2023-tesla
   type: proceedings
@@ -113,12 +127,12 @@
     de: Die Studie kombiniert Sentimentanalyse und Topic Modelling (LDA), um rund 4.700 deutschsprachige Online-Kommentare zur Öffnung des Tesla-Supercharger-Netzes für andere Marken auszuwerten. Ein auf deutschen Texten trainiertes BERT-Modell schnitt am besten ab; die Stimmung war überwiegend negativ, häufige Themen waren Preise, Verfügbarkeit und blockierte Ladeplätze.
     en: The study combines sentiment analysis and topic modelling (LDA) to analyse about 4,700 German-language online comments on Tesla opening its Supercharger network to other brands. A BERT model trained on German text performed best; sentiment was mostly negative, with pricing, availability and blocked charging bays as frequent topics.
   verified: true
-  check: Schreibweise der Herausgeberin O'Gorman/O'Gormann prüfen (im Tagungsband uneinheitlich).
-  source: Tagungsband (PDF der IU)
+  source: Tagungsband (PDF der IU); Schreibweise O'Gorman laut Inhaltsverzeichnis, Autorenzeile und Kurzbiografie (Titelblatt mit Tippfehler „O'Gormann“)
 
 - id: leschik-2023-marketing-club
   type: talk
   year: 2023
+  date: 2023-05-23
   authors: ["Leschik, Damian"]
   title: "Sentiment-Analyse im Marketing und Management"
   event: {de: "Vortrag beim Marketing Club Aachen", en: "Talk at Marketing Club Aachen"}
@@ -126,8 +140,8 @@
   url: https://marketingclub-aachen.de/veranstaltungen/sentiment-analyse-im-marketing-und-management/
   language: de
   topics: [consumer-insights]
-  verified: false
-  check: Datum und Titel bestätigen (Quelle bisher nur der alte Website-Entwurf).
+  verified: true
+  source: Veranstaltungsseite des Marketing Club Aachen (Impulsvortrag am 23. Mai 2023, Untertitel „Eine Case Studie am Beispiel von TESLAS Superchargern“)
 
 - id: leschik-2022-jbs
   type: article
@@ -152,12 +166,16 @@
   type: report
   year: 2022
   authors: ["Tigre Moura, Francisco", "Leschik, Damian"]
-  title: "Live FM: Fan Monitor 2022 – German music fans, technology innovation and sustainable consumption"
+  title: "Live FM: Fan Monitor 2022 – An analysis of attitudes and behaviors of music fans in Germany towards technology innovation and sustainable consumption"
   institution: IU Internationale Hochschule
+  url: https://liveinnovation.org/download/6654/
   language: en
   topics: [consumer-insights]
-  verified: false
-  check: Titel, Autoren und Link der Ausgabe 2022 bestätigen (Quelle bisher nur der alte Website-Entwurf).
+  summary:
+    de: Studie zu Einstellungen und Verhalten von Musikfans in Deutschland gegenüber technologischen Innovationen und nachhaltigem Konsum.
+    en: Study of the attitudes and behaviour of music fans in Germany towards technology innovation and sustainable consumption.
+  verified: true
+  source: PDF der Ausgabe 2022 auf liveinnovation.org (Titelblatt und Zitierempfehlung)
 
 - id: tigre-moura-2021-fan-monitor
   type: report
@@ -180,14 +198,15 @@
   authors: ["Tigre Moura, Francisco", "Leschik, Damian", "Carnicelli Filho, Sandro", "McPherson, Gayle", "Reid, Emma"]
   title: "Live FM: Fan Monitor 2020 – Analysis of attitudes and behavioral trends of music fans in Germany and Scotland during the Covid-19 pandemic"
   institution: IU Internationale Hochschule & University of the West of Scotland
-  url: https://liveinnovation.org/fan-monitor/
+  url: https://liveinnovation.org/download/5907/
   language: en
   topics: [consumer-insights]
   summary:
     de: Online-Befragung von Musik- und Veranstaltungsfans in Deutschland und Schottland zu ihrem Verhalten und ihren Wahrnehmungen während der Covid-19-Pandemie.
     en: Online survey of music and event fans in Germany and Scotland on their behaviour and perceptions during the Covid-19 pandemic.
-  verified: false
-  check: Autorenliste der Ausgabe 2020 bestätigen.
+  verified: true
+  check: Jahr – Titelblatt „2020 Edition“, die Zitierempfehlung im PDF nennt 2021.
+  source: PDF der Ausgabe 2020 auf liveinnovation.org (Autoren laut Titelblatt)
 
 - id: tigre-moura-2020-artist-monitor
   type: report
@@ -195,11 +214,14 @@
   authors: ["Tigre Moura, Francisco", "Leschik, Damian"]
   title: "Live AM: Artist Monitor 2020 – Analysis of attitudes and behavioral trends of music professionals in Germany during the Covid-19 pandemic"
   institution: IU Internationale Hochschule
-  url: https://liveinnovation.org/artist-monitor/
+  url: https://liveinnovation.org/download/6028/
   language: en
   topics: [consumer-insights]
-  verified: false
-  check: Autorenliste bestätigen.
+  summary:
+    de: Erste Ausgabe des Artist Monitor. Sie untersucht Wahrnehmungen und geplantes Verhalten von Musikerinnen, Musikern und weiteren Fachleuten der Musikbranche in Deutschland während der Covid-19-Pandemie.
+    en: First edition of the Artist Monitor. It examines the perceptions and intended behaviour of musicians and other music industry professionals in Germany during the Covid-19 pandemic.
+  verified: true
+  source: PDF der Ausgabe 2020 auf liveinnovation.org (Titelblatt); Projektseite liveinnovation.org/artist-monitor
 
 - id: leschik-dba-thesis
   type: thesis
@@ -210,7 +232,8 @@
   institution: Charles Sturt University
   place: {de: Australien, en: Australia}
   award: Joss Group Outstanding Thesis Prize
+  url: https://researchoutput.csu.edu.au/files/82176346/Leschik_Damian_thesis.pdf
   language: en
   topics: [m-and-a]
-  verified: false
-  check: Exakter Titel und Jahr der Dissertation bestätigen (Quelle bisher nur der alte Website-Entwurf).
+  verified: true
+  source: Titelblatt der Dissertation (Charles Sturt University, Faculty of Business, Justice and Behavioural Studies, März 2017); Preis laut IU-Profil

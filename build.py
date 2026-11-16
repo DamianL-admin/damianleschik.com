@@ -244,6 +244,7 @@ class Builder:
             p = dict(raw)
             p["year"] = int(p["year"])
             p["authors"] = p.get("authors", [])
+            p["date_precision"] = 10 if len(str(p.get("date") or "")) >= 10 else 7
             p["date"] = to_date(p.get("date")) if p.get("date") else None
             p["doi_url"] = "https://doi.org/{}".format(p["doi"]) if p.get("doi") else ""
             p["link"] = p["doi_url"] or p.get("url", "")
@@ -395,9 +396,9 @@ class Builder:
         item = {"@type": TYPE_LD[p["type"]], "@id": self.abs_url(ROUTES["publications"][DEFAULT_LANG]) + "#" + p["id"],
                 "name": p["title"], "inLanguage": p.get("language")}
         if p["type"] == "talk":
-            item.update({"startDate": (p["date"].isoformat()[:7] if p.get("date") else str(p["year"])),
+            item.update({"startDate": (p["date"].isoformat()[:p["date_precision"]] if p.get("date") else str(p["year"])),
                          "performer": authors[0] if len(authors) == 1 else authors,
-                         "location": {"@type": "Place", "name": loc(p.get("place"), lang) or loc(p.get("event"), lang)},
+                         "location": {"@type": "Place", "name": loc(p.get("place"), lang)} if p.get("place") else None,
                          "superEvent": {"@type": "Event", "name": loc(p.get("event"), lang)},
                          "url": p.get("url")})
             return {k: v for k, v in item.items() if v}
@@ -829,7 +830,8 @@ class Builder:
             elif p["type"] == "thesis":
                 fields += [("school", p.get("institution")), ("type", p.get("degree"))]
             elif p["type"] == "talk":
-                fields += [("howpublished", "{} {}".format("Talk,", loc(p.get("event"), "en")))]
+                event = loc(p.get("event"), "en")
+                fields += [("howpublished", event if event.lower().startswith("talk") else "Talk, " + event)]
             fields += [("doi", p.get("doi")), ("url", p.get("url") if not p.get("doi") else None)]
             lines = []
             for key, value in fields:
