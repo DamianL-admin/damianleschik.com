@@ -36,19 +36,19 @@
 {% endmacro %}
 
 {% macro comic_item(c, heading='h3') %}
-<article class="comic" id="{{ c.id }}">
+<article class="comic{% if c.cover %} has-image{% endif %}" id="{{ c.id }}"{% if c.language and c.language != lang %} data-lang="{{ c.language }}"{% endif %}>
   <div class="comic-cover">
     {% if c.cover %}
-    <img src="{{ rel(c.cover) }}" alt="" loading="lazy" width="600" height="800">
+    {% if c.image %}<a class="comic-zoom" href="{{ rel(c.image) }}" title="{{ t.comics_view_full }}">{% endif %}<img src="{{ rel(c.cover) }}" alt="{{ c.cover_alt_text }}" loading="lazy" width="{{ c.cover_size[0] }}" height="{{ c.cover_size[1] }}">{% if c.image %}</a>{% endif %}
     {% else %}
     <div class="comic-placeholder" aria-hidden="true"><span></span><span></span><span></span></div>
     {% endif %}
   </div>
   <div class="comic-body">
-    <{{ heading }} class="comic-title">{{ c.title_text }}</{{ heading }}>
+    <{{ heading }} class="comic-title"{% if c.language and c.language != lang %} lang="{{ c.language }}"{% endif %}>{{ c.title_text }}</{{ heading }}>
     <p>{{ c.description_text }}</p>
     {% if c.based_on_text %}
-    <p class="comic-source">{{ t.comics_based_on }}: <a href="{{ c.based_on_link }}">{{ c.based_on_text }}</a></p>
+    <p class="comic-source">{{ t.comics_based_on }}: <a href="{{ c.based_on_link }}" title="{{ c.based_on_title }}">{{ c.based_on_text }}</a>{% if c.language and c.language != lang %} · {{ t['comics_lang_' ~ c.language] }}{% endif %}</p>
     {% endif %}
     {% if c.available %}
     <a class="button" href="{{ rel(c.url) }}" download>{{ t.comics_download }}<span class="button-meta">PDF, {{ c.size_text }}</span></a>

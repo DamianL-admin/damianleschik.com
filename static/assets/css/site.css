@@ -303,7 +303,12 @@ em { font-style: italic; }
     radial-gradient(50% 50% at 70% 65%, rgb(var(--glow-sand) / .9), transparent 70%),
     var(--paper);
 }
+.comic.has-image { grid-template-columns: 1fr; }
+.comic.has-image .comic-cover { aspect-ratio: auto; background: #fff; max-width: none; }
+.comic.has-image .comic-cover img { height: auto; object-fit: contain; display: block; }
+.comic-zoom { display: block; cursor: zoom-in; }
 .comic-title { margin-bottom: .6rem; text-wrap: pretty; }
+h2.comic-title { font-size: clamp(1.6rem, 2.6vw, 2.15rem); line-height: 1.12; }
 .comic-body p { font-size: 1rem; }
 .comic-source { color: var(--ink-soft); }
 

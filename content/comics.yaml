@@ -6,6 +6,9 @@
 #   2. Titel, Beschreibung und "based_on" unten ausfüllen.
 #   3. Optional: Titelbild als static/assets/img/<id>.jpg ablegen
 #      und unter "cover" eintragen (z. B. /assets/img/comic-1.jpg).
+#      "image" = große Fassung zum Vergrößern, "cover_alt" = Bildbeschreibung
+#      (wichtig für Barrierefreiheit, Google und KI), "language" = Sprache des Comics,
+#      "based_on_url" = optional anderer Link zur Studie als in publikationen.yaml.
 #   4. python3 build.py
 # Solange das PDF fehlt, zeigt die Seite „PDF folgt in Kürze“.
 #
@@ -15,15 +18,21 @@
 
 - id: comic-1
   file: comic-1.pdf
-  cover: ""
+  cover: /assets/img/comic-1-720.jpg
+  image: /assets/img/comic-1.jpg
+  language: en
   # id einer Publikation aus publikationen.yaml, auf der der Comic beruht
-  based_on: ""
+  based_on: leschik-2026-ai-interviews
+  based_on_url: https://doi.org/10.1007/978-3-658-46709-8_41-1
   title:
-    de: "Comic 1 – Titel folgt"
-    en: "Comic 1 – title to follow"
+    de: "Exploring AI-generated interviews using the means-end chain model: A comparative study with human-led interviews"
+    en: "Exploring AI-generated interviews using the means-end chain model: A comparative study with human-led interviews"
   description:
-    de: "Hier steht bald eine kurze Beschreibung: Worum geht es in der Studie, und was ist die wichtigste Erkenntnis?"
-    en: "A short description will follow: what the study is about and its key finding."
+    de: "Wie antworten KI-simulierte Personas im Vergleich zu echten Menschen? Der Comic erzählt eine Vergleichsstudie, in der Menschen und KI-Personas mit der Means-End-Chain-Methode zu Smartphones befragt wurden. Die menschlichen Befragten achteten vor allem auf Praktisches wie Akkulaufzeit, Sicherheit und Preis, die KI-Personas betonten dagegen Ideale wie Geschwindigkeit, Erfolg und Unabhängigkeit. Das Fazit: KI für die breite Ideensuche nutzen und Menschen, um echte Entscheidungen zu prüfen."
+    en: "How do AI-simulated personas answer compared with real people? This comic retells a comparative study in which humans and AI personas were interviewed about smartphones using the means-end chain method. Human respondents focused on everyday practicalities such as battery life, security and price, while the AI personas stressed aspirational values such as speed, success and independence. The conclusion: use AI for broad exploration and humans to validate real-world choices."
+  cover_alt:
+    de: "Comic in vier Bildern: Ein Forscher stellt eine Means-End-Chain-Studie vor, die Interviews mit Menschen und KI-Personas zu Smartphones vergleicht. Ein Mensch denkt an Akkulaufzeit, Sicherheit und Preis, ein Roboter an Geschwindigkeit, Erfolg und Unabhängigkeit. Zum Schluss geben sich Forscher und Roboter die Hand: hybride Forschungsstrategie mit KI-Ideen und Prüfung durch Menschen."
+    en: "Four-panel comic: a researcher presents a means-end chain study comparing interviews with humans and AI personas about smartphones. A human thinks of battery life, security and price, a robot of speed, success and independence. Finally the researcher and the robot shake hands: a hybrid research strategy with AI insights and human validation."
 
 - id: comic-2
   file: comic-2.pdf

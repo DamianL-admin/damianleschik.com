@@ -163,6 +163,23 @@ def join_apa(names) -> str:
     return ", ".join(items[:-1]) + ", & " + items[-1]
 
 
+def image_size(path: Path):
+    """Breite und Höhe eines JPEG- oder PNG-Bildes (ohne zusätzliche Bibliothek)."""
+    data = path.read_bytes()
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")
+    i = 2
+    while i < len(data) - 9:
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        marker = data[i + 1]
+        if marker in (0xC0, 0xC1, 0xC2):
+            return int.from_bytes(data[i + 7:i + 9], "big"), int.from_bytes(data[i + 5:i + 7], "big")
+        i += 2 + int.from_bytes(data[i + 2:i + 4], "big")
+    return 600, 800
+
+
 def human_size(num: int, lang: str) -> str:
     mb = num / (1024 * 1024)
     text = "{:.1f} MB".format(mb) if mb >= 0.1 else "{} KB".format(max(1, round(num / 1024)))
@@ -279,6 +296,9 @@ class Builder:
             c["url"] = "/downloads/{}".format(c["file"])
             cover = (c.get("cover") or "").strip()
             c["cover"] = cover if cover and (STATIC / cover.lstrip("/")).exists() else ""
+            c["cover_size"] = image_size(STATIC / cover.lstrip("/")) if c["cover"] else (600, 800)
+            image = (c.get("image") or "").strip()
+            c["image"] = image if image and (STATIC / image.lstrip("/")).exists() else ""
             c["based_on_pub"] = next((p for p in self.pubs if p["id"] == c.get("based_on")), None)
             if not c["available"]:
                 self.warn("Comic-PDF fehlt noch: static/downloads/{}".format(c["file"]))
@@ -496,9 +516,15 @@ class Builder:
         view["title_text"] = loc(c.get("title"), lang)
         view["description_text"] = loc(c.get("description"), lang)
         view["size_text"] = human_size(c["bytes"], lang) if c["available"] else ""
+        view["cover_alt_text"] = loc(c.get("cover_alt"), lang)
         if c["based_on_pub"]:
-            view["based_on_text"] = "{} ({})".format(c["based_on_pub"]["title"], c["based_on_pub"]["year"])
-            view["based_on_link"] = c["based_on_pub"]["link"]
+            p = c["based_on_pub"]
+            names = [a.split(",")[0].strip() for a in p.get("authors", [])]
+            who = names[0] if len(names) == 1 else " & ".join(names) if len(names) == 2 else names[0] + " et al."
+            where = p.get("journal") or p.get("container") or ""
+            view["based_on_text"] = "{} ({}){}".format(who, p["year"], ", " + loc(where, lang) if where else "")
+            view["based_on_title"] = p["title"]
+            view["based_on_link"] = c.get("based_on_url") or p["link"]
         return view
 
     # ------------------------------------------------------------- Rendern
@@ -620,7 +646,9 @@ class Builder:
         for c in self.comics:
             work = {"@type": "CreativeWork", "name": loc(c["title"], lang), "description": loc(c["description"], lang),
                     "genre": "Wissenschaftscomic" if lang == "de" else "Science comic", "author": self.person_ref(),
-                    "inLanguage": lang}
+                    "inLanguage": c.get("language") or lang, "url": self.abs_url(url) + "#" + c["id"]}
+            if c["image"] or c["cover"]:
+                work["image"] = self.abs_url(c["image"] or c["cover"])
             if c["available"]:
                 work["associatedMedia"] = {"@type": "MediaObject", "contentUrl": self.abs_url(c["url"]),
                                            "encodingFormat": "application/pdf"}

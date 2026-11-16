@@ -31,6 +31,9 @@ de:
   notes_page_description: Damian Leschik stellt aktuelle Studien zu Konsumentenverhalten, KI, Silicon Sampling und Marktforschung vor und ordnet sie ein.
   comics_heading: Forschung als Comic
   comics_intro: Zwei Studien als Comic erzählt, zum Lesen, Weitergeben und für die Lehre. Kostenlos als PDF.
+  comics_view_full: Comic in voller Größe ansehen
+  comics_lang_en: Comic auf Englisch
+  comics_lang_de: Comic auf Deutsch
   comics_download: PDF herunterladen
   comics_pending: PDF folgt in Kürze
   comics_based_on: Beruht auf
@@ -131,6 +134,9 @@ en:
   notes_page_description: Damian Leschik presents and discusses recent studies on consumer behaviour, AI, silicon sampling and market research.
   comics_heading: Research as comics
   comics_intro: Two studies told as comics, to read, share and use in teaching. Free PDF downloads.
+  comics_view_full: View the comic at full size
+  comics_lang_en: Comic in English
+  comics_lang_de: Comic in German
   comics_download: Download PDF
   comics_pending: PDF coming soon
   comics_based_on: Based on
