@@ -36,11 +36,17 @@
 
 - id: comic-2
   file: comic-2.pdf
-  cover: ""
-  based_on: ""
+  cover: /assets/img/comic-2-720.jpg
+  image: /assets/img/comic-2.jpg
+  language: en
+  based_on: lac-leschik-2024-rag
+  based_on_url: https://doi.org/10.1007/978-3-658-45132-5_15
   title:
-    de: "Comic 2 – Titel folgt"
-    en: "Comic 2 – title to follow"
+    de: "Unlocking the marketing and sales potential: Bridging generative AI with domain-specific data using retrieval augmented generation architecture"
+    en: "Unlocking the marketing and sales potential: Bridging generative AI with domain-specific data using retrieval augmented generation architecture"
   description:
-    de: "Hier steht bald eine kurze Beschreibung: Worum geht es in der Studie, und was ist die wichtigste Erkenntnis?"
-    en: "A short description will follow: what the study is about and its key finding."
+    de: "Viele Unternehmen wollen generative KI im Marketing nutzen, fürchten aber, dass vertrauliche Kunden- und Verkaufsdaten nach außen gelangen. Der Comic zeigt die Lösung aus dem Buchbeitrag: eine lokale Retrieval-Augmented-Generation-Architektur (RAG), bei der die KI in einem gesicherten Datentresor ohne Internetverbindung arbeitet. Mehrere lokale KI-Agenten werten die Daten gemeinsam aus und leiten daraus eine Marketingstrategie ab, ohne die Vertraulichkeit zu gefährden."
+    en: "Many companies want to use generative AI in marketing but worry that confidential customer and sales data could leak. This comic shows the solution from the book chapter: a local retrieval augmented generation (RAG) architecture in which the AI works inside a secure data vault without an internet connection. Several local AI agents analyse the data together and derive a marketing strategy without compromising confidentiality."
+  cover_alt:
+    de: "Comic in vier Bildern: Zwei Beschäftigte halten besorgt Ordner mit Verkaufs- und Kundendaten und fürchten Datenlecks durch öffentliche KI. Ein Roboter arbeitet in einem lokalen, gesicherten Datentresor ohne Internet mit Retrieval Augmented Generation. Drei KI-Agenten analysieren gemeinsam die Daten und finden Mountainbikes im Juli und August als Umsatzspitze. Zum Schluss präsentiert ein Manager mit dem Roboter eine vertrauliche Marketingstrategie, das Team applaudiert."
+    en: "Four-panel comic: two employees anxiously hold folders of sales and customer data, fearing leaks through public AI. A robot works inside a local, secure data vault without internet using retrieval augmented generation. Three AI agents analyse the data together and identify mountain bikes in July and August as the revenue peak. Finally a manager and the robot present a confidential marketing strategy while the team applauds."
