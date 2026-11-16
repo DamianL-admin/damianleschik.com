@@ -95,7 +95,7 @@ impressum:
 # Mit Mess-ID (z. B. G-ABC123XYZ): GA4 lädt erst nach Einwilligung über das eigene Banner.
 # Die Datenschutzerklärung passt sich automatisch an.
 analytics:
-  ga4_id: ""
+  ga4_id: "G-7B7TD2CTW2"
   # Aufbewahrung der Ereignisdaten in GA4 (Verwaltung → Datenerfassung und -änderung → Datenaufbewahrung)
   retention_months: 14
 
