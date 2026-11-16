@@ -260,7 +260,7 @@ class Audit:
         else:
             text = llms.read_text(encoding="utf-8")
             for url, parser in self.pages.items():
-                if "/notizen/" in url and url.count("/") > 2 and "noindex" not in parser.meta.get("robots", ""):
+                if re.fullmatch(r"/(de/notizen|notes)/[^/]+/", url) and "noindex" not in parser.meta.get("robots", ""):
                     if self.base + url not in text:
                         self.add("WARNUNG", "llms.txt", "Forschungsnotiz fehlt: " + url)
         for name in ("llms-full.txt", "feed.xml", "publikationen.bib", "publikationen.json"):

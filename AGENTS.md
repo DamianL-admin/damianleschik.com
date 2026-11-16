@@ -33,7 +33,7 @@ Persönliche, akademische Website von **Prof. Dr. Damian Leschik**, Professor f�
 | Veröffentlichung über GitHub Pages (Vorlage, gehört im Repository nach `.github/workflows/deploy.yml`; Workflow-Dateien sind für Remote-Werkzeuge geschützt, daher nur über Git anlegen) | `deploy/github-pages.yml` |
 | Berichte des Agenten | `berichte/` |
 
-Erzeugt werden automatisch: alle HTML-Seiten (DE unter `/`, EN unter `/en/`), `sitemap.xml` (mit hreflang), `robots.txt`, `llms.txt`, `llms-full.txt`, `feed.xml`, `publikationen.bib`, `publikationen.json`, strukturierte Daten (JSON-LD: Person, ProfilePage, ScholarlyArticle/Chapter, BlogPosting mit citation, BreadcrumbList).
+Erzeugt werden automatisch: alle HTML-Seiten (EN als Hauptsprache unter `/`, DE unter `/de/`; alte Adressen bis 16.11.2026 leitet die 404-Seite um), `sitemap.xml` (mit hreflang), `robots.txt`, `llms.txt`, `llms-full.txt`, `feed.xml`, `publikationen.bib`, `publikationen.json`, strukturierte Daten (JSON-LD: Person, ProfilePage, ScholarlyArticle/Chapter, BlogPosting mit citation, BreadcrumbList).
 
 ## Befehle
 

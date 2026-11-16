@@ -39,14 +39,19 @@ TEMPLATES = ROOT / "templates"
 STATIC = ROOT / "static"
 LANGS = ("de", "en")
 
+# Englisch ist die Hauptsprache (unter /), Deutsch liegt unter /de/.
+DEFAULT_LANG = "en"
 ROUTES = {
-    "home": {"de": "/", "en": "/en/"},
-    "publications": {"de": "/publikationen/", "en": "/en/publications/"},
-    "notes": {"de": "/notizen/", "en": "/en/notes/"},
-    "comics": {"de": "/comics/", "en": "/en/comics/"},
-    "imprint": {"de": "/impressum/", "en": "/en/legal-notice/"},
-    "privacy": {"de": "/datenschutz/", "en": "/en/privacy/"},
+    "home": {"en": "/", "de": "/de/"},
+    "publications": {"en": "/publications/", "de": "/de/publikationen/"},
+    "notes": {"en": "/notes/", "de": "/de/notizen/"},
+    "comics": {"en": "/comics/", "de": "/de/comics/"},
+    "imprint": {"en": "/legal-notice/", "de": "/de/impressum/"},
+    "privacy": {"en": "/privacy/", "de": "/de/datenschutz/"},
 }
+# Alte Adressen (bis 16.11.2026: Deutsch unter /, Englisch unter /en/). Die 404-Seite leitet sie um.
+OLD_PATHS = {"/en/": "/", "/publikationen/": "/de/publikationen/", "/notizen/": "/de/notizen/",
+             "/impressum/": "/de/impressum/", "/datenschutz/": "/de/datenschutz/"}
 MONTHS = {
     "de": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August",
            "September", "Oktober", "November", "Dezember"],
@@ -367,7 +372,7 @@ class Builder:
     def pub_ld(self, p, lang: str):
         authors = [self.person_ref() if split_name(a)[0] == self.family else {"@type": "Person", "name": full_name(a)}
                    for a in p["authors"]]
-        item = {"@type": TYPE_LD[p["type"]], "@id": self.abs_url(ROUTES["publications"]["de"]) + "#" + p["id"],
+        item = {"@type": TYPE_LD[p["type"]], "@id": self.abs_url(ROUTES["publications"][DEFAULT_LANG]) + "#" + p["id"],
                 "name": p["title"], "inLanguage": p.get("language")}
         if p["type"] == "talk":
             item.update({"startDate": (p["date"].isoformat()[:7] if p.get("date") else str(p["year"])),
@@ -410,7 +415,7 @@ class Builder:
                 "mainEntityOfPage": self.abs_url(n["url"]), "url": self.abs_url(n["url"]),
                 "keywords": ", ".join(n["tags"]), "wordCount": n["words"],
                 "image": self.abs_url("/assets/img/og-image.png"),
-                "isPartOf": {"@type": "Blog", "@id": self.abs_url(ROUTES["notes"]["de"]) + "#blog"},
+                "isPartOf": {"@type": "Blog", "@id": self.abs_url(ROUTES["notes"][DEFAULT_LANG]) + "#blog"},
                 "citation": citations}
         return {k: v for k, v in post.items() if v}
 
@@ -504,7 +509,7 @@ class Builder:
         alternates = []
         if key in ROUTES:
             alternates = [{"lang": l, "url": self.abs_url(ROUTES[key][l])} for l in LANGS]
-            alternates.append({"lang": "x-default", "url": self.abs_url(ROUTES[key]["de"])})
+            alternates.append({"lang": "x-default", "url": self.abs_url(ROUTES[key][DEFAULT_LANG])})
         profiles = [{"label": (v.get("label_en") if lang == "en" and v.get("label_en") else v["label"]), "url": v["url"]}
                     for v in self.site.get("profiles", {}).values() if v.get("url")]
         return {
@@ -530,7 +535,7 @@ class Builder:
 
     def page_alternates(self, key: str):
         alts = [{"lang": l, "url": self.abs_url(ROUTES[key][l])} for l in LANGS]
-        alts.append({"lang": "x-default", "url": self.abs_url(ROUTES[key]["de"])})
+        alts.append({"lang": "x-default", "url": self.abs_url(ROUTES[key][DEFAULT_LANG])})
         return alts
 
     def build_home(self, lang: str):
@@ -579,7 +584,7 @@ class Builder:
         t = self.strings[lang]
         ctx = self.base_context(lang, url, "notes")
         views = [self.note_view(n, lang) for n in self.notes]
-        blog = {"@type": "Blog", "@id": self.abs_url(ROUTES["notes"]["de"]) + "#blog", "url": self.abs_url(url),
+        blog = {"@type": "Blog", "@id": self.abs_url(ROUTES["notes"][DEFAULT_LANG]) + "#blog", "url": self.abs_url(url),
                 "name": t["notes_page_title"], "description": t["notes_page_description"], "inLanguage": lang,
                 "author": self.person_ref(), "isPartOf": {"@id": self.website_id},
                 "blogPost": [{"@type": "BlogPosting", "headline": n["title"], "url": self.abs_url(n["url"]),
@@ -620,7 +625,7 @@ class Builder:
                 work["associatedMedia"] = {"@type": "MediaObject", "contentUrl": self.abs_url(c["url"]),
                                            "encodingFormat": "application/pdf"}
             if c["based_on_pub"]:
-                work["isBasedOn"] = {"@id": self.abs_url(ROUTES["publications"]["de"]) + "#" + c["based_on_pub"]["id"]}
+                work["isBasedOn"] = {"@id": self.abs_url(ROUTES["publications"][DEFAULT_LANG]) + "#" + c["based_on_pub"]["id"]}
             parts.append(work)
         graph = [{"@type": "CollectionPage", "url": self.abs_url(url), "name": t["comics_page_title"],
                   "description": t["comics_page_description"], "inLanguage": lang, "hasPart": parts,
@@ -649,8 +654,9 @@ class Builder:
         self.render("page.html", url, ctx, alternates=self.page_alternates(key))
 
     def build_404(self):
-        ctx = self.base_context("de", "/404.html", "notfound")
-        t = self.strings["de"]
+        ctx = self.base_context(DEFAULT_LANG, "/404.html", "notfound")
+        t = self.strings[DEFAULT_LANG]
+        ctx["old_paths"] = OLD_PATHS
         ctx.update({"page_title": "{} – {}".format(t["not_found_title"], self.site["name"]),
                     "description": t["not_found_text"], "og_type": "website", "noindex": True,
                     "jsonld": json_ld({"@context": "https://schema.org", "@type": "WebPage", "name": t["not_found_title"]})})
