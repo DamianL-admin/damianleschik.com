@@ -1,10 +1,10 @@
 ---
 # Titel im Browser-Tab und in Suchergebnissen (max. ca. 60 Zeichen)
-title: "Prof. Dr. Damian Leschik – Marketing, KI und Marktforschung"
+title: "Damian Leschik – Konsumentenverhalten, Marktforschung & KI"
 # Beschreibung für Google & Co. (ca. 120–160 Zeichen)
 description: "Damian Leschik ist Professor für Marketing Management an der IU Internationalen Hochschule. Er forscht zu KI in der Marktforschung und Silicon Sampling."
 # Großer Satz oben auf der Startseite (beginnt mit deinem Namen)
-claim: "erforscht, wie künstliche Intelligenz die Marktforschung verändert."
+claim: "erforscht, wie Konsumenten entscheiden – mit Marktforschung und KI."
 ---
 Damian Leschik ist Professor für Marketing Management an der IU Internationalen Hochschule und lehrt an den Campus Aachen und Köln. Er untersucht, was künstliche Intelligenz für die Marktforschung leisten kann und wo ihre Grenzen liegen. Ein Schwerpunkt ist **Silicon Sampling**: die Frage, ob KI-generierte Befragte echte Menschen in Studien ersetzen oder sinnvoll ergänzen können.
 

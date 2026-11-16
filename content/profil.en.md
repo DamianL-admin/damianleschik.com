@@ -1,7 +1,7 @@
 ---
-title: "Prof. Dr. Damian Leschik – Marketing, AI and Market Research"
+title: "Damian Leschik – Consumer Behaviour, Market Research & AI"
 description: "Damian Leschik is Professor of Marketing Management at IU International University of Applied Sciences, researching AI in market research and silicon sampling."
-claim: "studies how artificial intelligence is changing market research."
+claim: "studies how consumers decide – through market research and AI."
 ---
 Damian Leschik is Professor of Marketing Management at IU International University of Applied Sciences, teaching at the Aachen and Cologne campuses in Germany. His research asks what artificial intelligence can contribute to market research and where its limits lie. A particular focus is **silicon sampling**: whether AI-generated respondents can replace, or usefully complement, real people in surveys and interviews.
 
