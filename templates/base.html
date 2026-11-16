@@ -80,8 +80,65 @@
         <li><a href="{{ rel('/llms.txt') }}">{{ t.footer_ai }}</a></li>
       </ul>
     </div>
-    <p class="footer-copy">© {{ year }} {{ site.name }} · {{ t.footer_note }}</p>
+    {% set ga4_id = (site.analytics or {}).ga4_id %}
+    <p class="footer-copy">© {{ year }} {{ site.name }} · {% if ga4_id %}{{ t.footer_note_ga }} · <button type="button" class="link-button" data-consent-open>{{ t.consent_settings }}</button>{% else %}{{ t.footer_note }}{% endif %}</p>
   </div>
 </footer>
+{% if ga4_id %}
+<section class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-text" hidden>
+  <p class="consent-title" id="consent-title">{{ t.consent_title }}</p>
+  <p id="consent-text">{{ t.consent_text }} <a href="{{ rel(routes.privacy) }}">{{ t.consent_more }}</a>.</p>
+  <div class="consent-actions">
+    <button type="button" class="button" data-consent="denied">{{ t.consent_reject }}</button>
+    <button type="button" class="button" data-consent="granted">{{ t.consent_accept }}</button>
+  </div>
+</section>
+<script>
+/* Einwilligung für Google Analytics 4 (eigenes Banner, ohne externe Bibliothek).
+   GA4 wird erst nach Zustimmung geladen. Vorher gehen keine Daten an Google. */
+(function () {
+  var ID = {{ ga4_id | tojson }}, KEY = "dl-consent-v1", MAX_AGE = 365 * 24 * 3600 * 1000;
+  var box = document.getElementById("consent");
+  function read() {
+    try { var v = JSON.parse(localStorage.getItem(KEY) || "null");
+      return v && Date.now() - v.t < MAX_AGE ? v.s : null; } catch (e) { return null; }
+  }
+  function save(s) { try { localStorage.setItem(KEY, JSON.stringify({ s: s, t: Date.now() })); } catch (e) {} }
+  function load() {
+    if (window.__ga4Loaded) { window["ga-disable-" + ID] = false; return; }
+    window.__ga4Loaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
+    gtag("js", new Date());
+    gtag("config", ID, { allow_google_signals: false, allow_ad_personalization_signals: false, cookie_expires: 34128000 });
+    var s = document.createElement("script");
+    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ID);
+    document.head.appendChild(s);
+  }
+  function stop() {
+    window["ga-disable-" + ID] = true;
+    if (window.gtag) gtag("consent", "update", { analytics_storage: "denied" });
+    var host = location.hostname, parts = host.split("."), domains = ["", host, "." + host];
+    if (parts.length > 2) domains.push("." + parts.slice(-2).join("."));
+    document.cookie.split(";").forEach(function (c) {
+      var name = c.split("=")[0].trim();
+      if (/^_ga/.test(name)) domains.forEach(function (d) {
+        document.cookie = name + "=; Max-Age=0; path=/" + (d ? "; domain=" + d : "");
+      });
+    });
+  }
+  function choose(s) { save(s); box.hidden = true; if (s === "granted") load(); else stop(); }
+  box.querySelectorAll("[data-consent]").forEach(function (b) {
+    b.addEventListener("click", function () { choose(b.getAttribute("data-consent")); });
+  });
+  document.querySelectorAll("[data-consent-open]").forEach(function (b) {
+    b.addEventListener("click", function () { box.hidden = false; box.querySelector("[data-consent]").focus(); });
+  });
+  var state = read();
+  if (state === "granted") load(); else if (state === null) box.hidden = false;
+})();
+</script>
+{% endif %}
 </body>
 </html>

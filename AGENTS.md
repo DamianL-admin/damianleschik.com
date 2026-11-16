@@ -8,7 +8,7 @@ Persönliche, akademische Website von **Prof. Dr. Damian Leschik**, Professor f�
 
 1. **Korrekt.** Jede Angabe stimmt: Publikationen, Titel, Jahre, Zahlen, Quellen.
 2. **Auffindbar.** Für Suchmaschinen (Google, Bing) und KI-Systeme (ChatGPT, Claude, Gemini, Perplexity, Mistral, Grok).
-3. **Einfach.** Schlichte Gestaltung, schnell, barrierearm, ohne Cookies und Tracking.
+3. **Einfach.** Schlichte Gestaltung, schnell, barrierearm. Cookies und Tracking nur mit Einwilligung (Google Analytics 4, siehe Regel 4).
 4. **Aktuell.** Neue Publikationen zeitnah, alle 2–4 Wochen eine Forschungsnotiz.
 
 ## Projektaufbau
@@ -55,7 +55,7 @@ Nach jeder Änderung: bauen und prüfen. Ziel: 0 Fehler, Warnungen nur bei Punkt
 1. **Nichts erfinden.** Keine Publikationen, Zitate, Zahlen, DOIs, Auszeichnungen oder Lebenslaufangaben ohne geprüfte Quelle (Verlagsseite, DOI-Auflösung, IU-Profil, ORCID). Unsicheres mit `verified: false` und `check: …` eintragen.
 2. **Inhalte in Damians Namen nur als Entwurf.** Forschungsnotizen immer als Entwurf in `content/entwuerfe/` mit `draft: true` anlegen, nie direkt in `content/notizen/`. Das GitHub-Repository ist öffentlich; Entwürfe und Berichte sind per `.gitignore` ausgeschlossen. Profiltexte und Forschungsschwerpunkte nicht umschreiben, sondern Vorschläge im Bericht machen. Damian gibt frei.
 3. **Rechtstexte nicht inhaltlich ändern** (`content/rechtliches/`, Impressum-Daten in `site.yaml`). Nur Hinweise im Bericht.
-4. **Keine Cookies, kein Tracking, keine externen Skripte, Schriften oder Einbettungen.** Keine neuen Abhängigkeiten ohne klaren Nutzen.
+4. **Keine Cookies, kein Tracking, keine externen Skripte, Schriften oder Einbettungen – einzige Ausnahme: Google Analytics 4 nach Einwilligung.** GA4 wird nur über das eigene Banner in `templates/base.html` geladen (Mess-ID in `site.yaml` unter `analytics.ga4_id`; leer = aus). Vor der Einwilligung darf keine Anfrage an Google gehen; Ablehnen muss so einfach sein wie Zustimmen; „Cookie-Einstellungen“ steht auf jeder Seite. `tools/audit.py` prüft das. Keine weiteren Tracking-Dienste, keine neuen Abhängigkeiten ohne klaren Nutzen.
 5. **KI-Crawler nie blockieren** (robots.txt wird erzeugt; auch Hoster-/CDN-Einstellungen prüfen, z. B. Cloudflare „Block AI bots“).
 6. **Deutsch und Englisch synchron halten.** Änderung in einer Sprache immer auch in der anderen.
 7. **Einfache, klare Sprache.** Kurze Sätze, wenig Fachjargon; Fachbegriffe nur, wo im Feld üblich.
@@ -85,6 +85,8 @@ Nach jeder Änderung: bauen und prüfen. Ziel: 0 Fehler, Warnungen nur bei Punkt
 **Forschungsnotiz veröffentlichen (nur nach Damians Freigabe).** Datei von `content/entwuerfe/` nach `content/notizen/` verschieben, `draft: false` setzen, bauen, prüfen. Die Notiz erscheint automatisch auf Startseite, Übersicht, in Sitemap, RSS und llms.txt.
 
 **Comic einbinden.** PDF nach `static/downloads/` (Dateiname wie in `comics.yaml`). PDF lesen, Titel und 2–4 Sätze Beschreibung (DE/EN) mit der Kernaussage schreiben, `based_on` auf die Publikations-id setzen. Metadaten setzen: `python3 tools/pdf_metadata.py static/downloads/comic-1.pdf --title "…" --subject "…" --keywords "…"`. Optional Titelbild aus Seite 1 erzeugen (`pdftoppm -jpeg -r 80 -f 1 -l 1 …`) und unter `cover` eintragen.
+
+**Besucherstatistik (GA4).** Mess-ID nur in `site.yaml` (`analytics.ga4_id`) ändern; Banner, Skript, Fußzeile und Datenschutzerklärung passen sich an. In GA4 eingestellt: Google Signals aus, Datenaufbewahrung wie `analytics.retention_months`. Banner-Texte stehen in `templates/strings.yaml` (`consent_*`). Rechtstexte zu GA4 nicht inhaltlich ändern (Regel 3).
 
 **Porträt einfügen.** Quadratisches Foto als `static/assets/img/portrait.jpg` (mind. 800 × 800 px, unter 250 KB). Danach `python3 tools/og_image.py` und bauen.
 

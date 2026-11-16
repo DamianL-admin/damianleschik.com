@@ -272,6 +272,17 @@ class Audit:
         imp = self.config.get("impressum", {})
         if any("[" in str(v) for v in imp.values()):
             self.add("FEHLER", "site.yaml", "Impressum enthält Platzhalter. Vor der Veröffentlichung Pflicht (§ 5 DDG)")
+        # Google Analytics: nur mit gültiger Mess-ID und nie ohne Einwilligung
+        ga4 = str((self.config.get("analytics") or {}).get("ga4_id") or "")
+        if ga4 and not re.fullmatch(r"G-[A-Z0-9]{4,}", ga4):
+            self.add("FEHLER", "site.yaml", "GA4-Mess-ID hat ein ungültiges Format (erwartet z. B. G-ABC123XYZ)")
+        for page in sorted(self.site_dir.rglob("*.html")):
+            html = page.read_text(encoding="utf-8", errors="ignore")
+            if re.search(r"<script[^>]+src=[\"'][^\"']*(googletagmanager\.com|google-analytics\.com)", html, re.I):
+                self.add("FEHLER", str(page.relative_to(self.site_dir)),
+                         "Google-Skript wird direkt eingebunden, also ohne Einwilligung. Nur über das Banner laden")
+            if ga4 and "data-consent-open" not in html:
+                self.add("FEHLER", str(page.relative_to(self.site_dir)), "Link „Cookie-Einstellungen“ fehlt")
         profiles = self.config.get("profiles", {})
         for key in ("orcid", "google_scholar", "linkedin"):
             if not profiles.get(key, {}).get("url"):

@@ -1,6 +1,6 @@
 # damianleschik.com – deine Homepage
 
-Eine schlichte, schnelle Website mit Kurzprofil, Forschungsschwerpunkten, allen Publikationen, Forschungsnotizen und zwei Comics zum Download. Sie ist auf Deutsch und Englisch, kommt ohne Cookies und Tracking aus und ist für Suchmaschinen und KI-Systeme (ChatGPT, Claude, Gemini, Perplexity, Mistral, Grok) gut lesbar.
+Eine schlichte, schnelle Website mit Kurzprofil, Forschungsschwerpunkten, allen Publikationen, Forschungsnotizen und zwei Comics zum Download. Sie ist auf Deutsch und Englisch, setzt Cookies und Besucherstatistik (Google Analytics 4) nur mit Einwilligung ein und ist für Suchmaschinen und KI-Systeme (ChatGPT, Claude, Gemini, Perplexity, Mistral, Grok) gut lesbar.
 
 ## Inhalte ändern
 

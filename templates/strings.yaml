@@ -86,6 +86,13 @@ de:
   footer_feed: RSS-Feed
   footer_ai: Für KI-Systeme (llms.txt)
   footer_note: Persönliche Website. Keine Cookies, kein Tracking.
+  footer_note_ga: Persönliche Website. Besucherstatistik nur mit Ihrer Einwilligung.
+  consent_settings: Cookie-Einstellungen
+  consent_title: Besucherstatistik
+  consent_text: Darf ich mit Google Analytics messen, wie diese Website genutzt wird? Dabei werden Cookies gesetzt und Nutzungsdaten an Google übermittelt, auch in die USA. Ohne Ihre Zustimmung wird nichts davon geladen. Sie können Ihre Wahl jederzeit über „Cookie-Einstellungen“ unten auf der Seite ändern.
+  consent_more: Mehr in der Datenschutzerklärung
+  consent_accept: Zustimmen
+  consent_reject: Ablehnen
   footer_nav_label: Weitere Seiten
   footer_site: Website
   footer_elsewhere: Im Netz
@@ -179,6 +186,13 @@ en:
   footer_feed: RSS feed
   footer_ai: For AI systems (llms.txt)
   footer_note: Personal website. No cookies, no tracking.
+  footer_note_ga: Personal website. Visitor statistics only with your consent.
+  consent_settings: Cookie settings
+  consent_title: Visitor statistics
+  consent_text: May I use Google Analytics to measure how this website is used? This sets cookies and sends usage data to Google, including to the USA. Nothing is loaded without your consent. You can change your choice at any time via “Cookie settings” at the bottom of the page.
+  consent_more: More in the privacy policy
+  consent_accept: Accept
+  consent_reject: Decline
   footer_nav_label: More pages
   footer_site: Website
   footer_elsewhere: Elsewhere
