@@ -5,7 +5,7 @@
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     {{ portrait_img('portrait-hero') }}
-    <h1 id="hero-title"><span class="hero-name">{{ site.honorific }} {{ site.name }}</span> <span class="hero-claim">{{ claim }}</span></h1>
+    <h1 id="hero-title"><span class="hero-name">{{ site.honorific }} {{ site.name }}</span> <span class="hero-claim">{% for line in claim.split("\n") %}<span class="hero-claim-line">{{ line }}</span>{% if not loop.last %} {% endif %}{% endfor %}</span></h1>
     <p class="hero-role">{{ job_title }}<br>{{ affiliation_name }} · {{ campus }}</p>
     <span class="hero-line" aria-hidden="true"></span>
   </div>

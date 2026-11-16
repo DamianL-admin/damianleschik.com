@@ -12,6 +12,7 @@ Benötigt Playwright mit Chromium:  pip install playwright && playwright install
 import argparse
 import asyncio
 import base64
+import html
 import sys
 import tempfile
 from pathlib import Path
@@ -33,7 +34,7 @@ IMG = ROOT / "static/assets/img"
 
 def page_html(lang: str, site: dict) -> str:
     meta, _ = read_md(ROOT / "content/profil.{}.md".format(lang))
-    claim = meta.get("claim", "")
+    claim = "<br>".join(html.escape(line) for line in meta.get("claim", "").split("\n"))
     role = "{}, {}".format(site["job_title"][lang], site["affiliation"]["name"] if lang == "de" else site["affiliation"]["name_en"])
     portrait = IMG / "portrait.jpg"
     if portrait.exists():

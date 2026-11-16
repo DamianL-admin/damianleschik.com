@@ -190,10 +190,12 @@ em { font-style: italic; }
   letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
 }
 .hero-claim {
-  display: block; max-width: 17ch;
-  font-family: var(--serif); font-size: clamp(2.5rem, 5.8vw, 4.7rem); line-height: 1.03;
-  letter-spacing: -0.012em; color: var(--teal); text-wrap: balance;
+  display: block; max-width: 100%;
+  font-family: var(--serif); font-size: clamp(2.3rem, 4.6vw, 3.9rem); line-height: 1.06;
+  letter-spacing: -0.012em; color: var(--teal);
 }
+/* Jede Zeile des Satzes (Trennung mit \n in profil.*.md) als eigener Block */
+.hero-claim-line { display: block; text-wrap: balance; }
 .hero-role { margin: 1.5rem auto 0; max-width: 40rem; color: var(--ink-soft); font-size: 1.05rem; line-height: 1.55; text-wrap: balance; }
 .hero-line {
   display: block; width: 1px; height: clamp(3rem, 7vw, 5rem);

@@ -767,7 +767,7 @@ class Builder:
             loc(s["affiliation"]["campus"], "en"),
             "; ".join(lower_first(r["en"]["title"]) for r in self.research))
         summary_de = "{} {} Er ist {} an der {} ({}).".format(
-            s["name"], de_meta.get("claim", ""), loc(s["job_title"], "de"),
+            s["name"], de_meta.get("claim", "").replace("\n", " "), loc(s["job_title"], "de"),
             s["affiliation"].get("name_dative", s["affiliation"]["name"]), loc(s["affiliation"]["campus"], "de"))
         head = [
             "# {}".format(s["name"]), "",
