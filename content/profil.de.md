@@ -8,6 +8,6 @@ claim: "erforscht Konsumentenverhalten und den Einsatz von KI in der Marktforsch
 ---
 Damian Leschik ist Professor für Betriebswirtschaftslehre mit Schwerpunkt Marketing an der IU Internationalen Hochschule und lehrt an den Campus Aachen und Köln. Er untersucht, was künstliche Intelligenz für die Marktforschung leisten kann und wo ihre Grenzen liegen. Ein Schwerpunkt ist **Silicon Sampling**: die Frage, ob KI-generierte Befragte echte Menschen in Studien ersetzen oder sinnvoll ergänzen können.
 
-Vor seiner Professur arbeitete er rund 15 Jahre in der Biotech- und Pharmaindustrie, in Marketing, Vertrieb, Business Development und Produktion, unter anderem bei PAION, PharmaCell, tesa Labtec und Biogazelle. Seine Promotion zum Doctor of Business Administration an der Charles Sturt University (Australien) wurde mit dem Joss Group Outstanding Thesis Prize ausgezeichnet.
+Vor seiner Professur arbeitete er rund 15 Jahre in der Biotech- und Pharmaindustrie, in Marketing, Vertrieb, Business Development und Produktion, unter anderem bei Rhein Biotech (Dynavax), PAION, PharmaCell (Lonza) und tesa Labtec. Seine Promotion zum Doctor of Business Administration an der Charles Sturt University (Australien) wurde mit dem Joss Group Outstanding Thesis Prize ausgezeichnet.
 
 Er lehrt auf Deutsch und Englisch, unter anderem Konsumentenverhalten, Marktforschung, Marketing-Controlling, International Brand Management, Data Science und Python. In der Arbeitsgemeinschaft für Marketing (AfM) ist er Vorstandsmitglied der Arbeitsgruppe „KI & Marke(ting)“.
