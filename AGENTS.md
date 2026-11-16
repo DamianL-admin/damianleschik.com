@@ -4,7 +4,7 @@ Diese Datei steuert jeden KI-Agenten, der an dieser Website arbeitet (geplanter 
 
 ## Zweck und Ziele
 
-Persönliche, akademische Website von **Prof. Dr. Damian Leschik**, Professor für Marketing Management an der IU Internationalen Hochschule (Aachen/Köln). Ziele in dieser Reihenfolge:
+Persönliche, akademische Website von **Prof. Dr. Damian Leschik**, Professor für Betriebswirtschaftslehre mit Schwerpunkt Marketing an der IU Internationalen Hochschule (Aachen/Köln). Ziele in dieser Reihenfolge:
 
 1. **Korrekt.** Jede Angabe stimmt: Publikationen, Titel, Jahre, Zahlen, Quellen.
 2. **Auffindbar.** Für Suchmaschinen (Google, Bing) und KI-Systeme (ChatGPT, Claude, Gemini, Perplexity, Mistral, Grok).
