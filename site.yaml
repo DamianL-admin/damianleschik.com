@@ -35,7 +35,7 @@ location:
 
 # Öffentliche Kontaktadresse auf der Website.
 # Tipp: Nach der Domain-Registrierung z. B. kontakt@damianleschik.com einrichten.
-email: damian.leschik@iu.org
+email: damian_leschik@hotmail.com
 
 alumni:
   - name: Charles Sturt University
@@ -88,7 +88,7 @@ impressum:
   street: "Im Vennbahnbogen 47"
   city: "52076 Aachen"
   country: Deutschland
-  email: damian.leschik@iu.org
+  email: damian_leschik@hotmail.com
 
 # Besucherstatistik mit Google Analytics 4.
 # Leer = aus: kein Banner, kein Skript, keine Cookies.
